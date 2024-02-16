@@ -15,24 +15,27 @@
     }
     .face {
         position: absolute;
-        top: 50px; /* Umieszczenie nad tekstem */
+        top: -50px; 
         left: 50%;
-        transform: translateX(-50%) scale(0.5); /* Zmniejszenie rozmiaru */
+        transform: translateX(-50%);
+        width: 100px; 
+        height: auto; 
         animation: spin 4s linear infinite;
     }
-    @keyframes spin {
-        0% { transform: translateX(-50%) scale(0.5) rotate(0deg); }
-        100% { transform: translateX(-50%) scale(0.5) rotate(360deg); }
+    @media only screen and (max-width: 600px) {
+        .face {
+            top: -100px;
+        }
     }
-    p {
-        font-size: 18px; /* Dodanie stylu dla tekstu */
-        text-align: center; /* Wyśrodkowanie tekstu */
+    @keyframes spin {
+        0% { transform: translate(-50%, -50%) rotate(0deg); }
+        100% { transform: translate(-50%, -50%) rotate(360deg); }
     }
 </style>
 </head>
 <body>
 <img src="twarz.png" alt="twarz" class="face">
-<p id="glupota"></p> <!-- Usunięcie generowanej daty -->
+<p id="generated-text"></p>
 <script>
     var glupoty1 = [
         "Ja chcę powiedzieć jedną rzecz:",
@@ -102,7 +105,7 @@
         glupoty5[Math.floor(Math.random() * glupoty5.length)] + " " +
         glupoty6[Math.floor(Math.random() * glupoty6.length)];
 
-    document.getElementById("glupota").innerText = zdanie; // Wyświetlanie tekstu
+    document.getElementById("generated-text").innerText = zdanie;
 </script>
 
 </body>
