@@ -11,12 +11,23 @@
         justify-content: center;
         align-items: center;
         height: 100vh;
+        position: relative; /* Dodane */
+    }
+    .face {
+        position: absolute; /* Dodane */
+        top: 50%; /* Dodane */
+        left: 50%; /* Dodane */
+        transform: translate(-50%, -50%); /* Dodane */
+        animation: spin 4s linear infinite; /* Dodane */
+    }
+    @keyframes spin {
+        0% { transform: translate(-50%, -50%) rotate(0deg); } /* Dodane */
+        100% { transform: translate(-50%, -50%) rotate(360deg); } /* Dodane */
     }
 </style>
 </head>
 <body>
-
-
+<img src="twarz.png" alt="twarz" class="face"> <!-- Dodane -->
 <script>
     var glupoty1 = [
         "Ja chcę powiedzieć jedną rzecz:",
@@ -27,10 +38,7 @@
         "Niech państwo nie mają złudzeń:",
         "Powiedzmy to wyraźnie:"
     ];
-</script>
 
-
-<script>
     var glupoty2 = [
         "Przedstawiciele czerwonej hołoty",
         "Ci wszyscy (tfu!) geje",
@@ -40,9 +48,7 @@
         "agenci bezpieki",
         "feminazistki"
     ];
-</script>
 
-<script>
     var glupoty3 = [
         "zupełnie bezkarnie",
         "całkowicie bezczelnie",
@@ -52,10 +58,7 @@
         "od czasów Okrągłego Stołu",
         "w ramach postępu"
     ];
-</script>
 
-
-<script>
     var glupoty4 = [
         "nawołują do podniesienia podatków",
         "próbują wyrzucić kierowców z miast",
@@ -65,10 +68,7 @@
         "nie dopuszczają prawicy do władzy",
         "uczą dzieci homoseksualizmu"
     ];
-</script>
 
-
-<script>
     var glupoty5 = [
         "bo dzięki temu mogą kraść",
         "bo dostają za to pieniądze",
@@ -78,9 +78,7 @@
         "bo chcą tworzyć raj na ziemi",
         "bo chcą niszczyć cwilizację białego człowieka"
     ];
-</script>
 
-<script>
     var glupoty6 = [
         "przez kolejne kadencje",
         "oczym się nie mówi",
@@ -90,9 +88,6 @@
         "- proszę zobaczyć, co się dzieje na Zachodzie, jeśli mi państwo nie wierzą",
         "co lat temu sto nikomu nie przyszłoby nawet do głowy"
     ];
-</script>
-
-<script>
 
     var zdanie =
         glupoty1[Math.floor(Math.random() * glupoty1.length)] + " " +
@@ -107,3 +102,4 @@
 
 </body>
 </html>
+22:28 16.02.2024
